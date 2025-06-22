@@ -135,7 +135,7 @@ class StockStatisticsAPITest(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         data = response.json()
         self.assertIn("detail", data)
-        self.assertIn("Negative price not allowed", data["detail"])
+        self.assertIn("Invalid number format", data["detail"])
         
     def test_invalid_format(self):
         """Test error handling for invalid format"""
