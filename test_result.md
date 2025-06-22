@@ -107,15 +107,18 @@ user_problem_statement: "Create a web app where I can put stock prices and it wi
 backend:
   - task: "Stock price input parsing and validation"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented input parsing for comma/space/newline separated formats with comprehensive validation"
+      - working: true
+        agent: "testing"
+        comment: "Tested input parsing with comma-separated, space-separated, and newline-separated formats. The API correctly parses valid inputs and returns appropriate error messages for invalid inputs. The API handles currency symbols (₹) correctly. Note: Mixed format inputs are not supported and return a 400 error."
 
   - task: "Statistical calculations API"
     implemented: true
