@@ -193,6 +193,7 @@ test_plan:
     - "Statistical calculations API"
     - "Netflix-themed UI with manual input"
     - "Statistics display cards"
+    - "Data visualizations"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
