@@ -191,3 +191,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Successfully implemented complete stock statistics web app with Netflix theme. All core features implemented: manual input parsing, comprehensive statistical calculations, beautiful UI with charts, and Indian Rupee formatting. Ready for backend testing."
+  - agent: "testing"
+    message: "Completed backend API testing. The stock statistics API is working correctly. Input parsing handles comma-separated, space-separated, and newline-separated formats properly. Statistical calculations are mathematically accurate for all metrics (basic stats, advanced stats, percentiles, and outlier detection). Error handling is robust for invalid inputs. The API returns well-formatted JSON responses with correct data types. Note: Mixed format inputs are not supported by the current implementation."
