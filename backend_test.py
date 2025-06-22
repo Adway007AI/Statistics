@@ -211,4 +211,28 @@ class StockStatisticsAPITest(unittest.TestCase):
 
 if __name__ == "__main__":
     print(f"Testing Stock Statistics API at: {API_URL}")
-    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+    # Use a test runner to capture and display results
+    import unittest
+    runner = unittest.TextTestRunner(verbosity=2)
+    suite = unittest.TestLoader().loadTestsFromTestCase(StockStatisticsAPITest)
+    result = runner.run(suite)
+    
+    # Print summary
+    print(f"\nTest Summary:")
+    print(f"Ran {result.testsRun} tests")
+    print(f"Failures: {len(result.failures)}")
+    print(f"Errors: {len(result.errors)}")
+    
+    # Print failures and errors
+    if result.failures:
+        print("\nFailures:")
+        for test, error in result.failures:
+            print(f"{test}: {error}")
+    
+    if result.errors:
+        print("\nErrors:")
+        for test, error in result.errors:
+            print(f"{test}: {error}")
+            
+    # Exit with appropriate code
+    sys.exit(len(result.failures) + len(result.errors))
