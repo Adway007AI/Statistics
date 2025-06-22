@@ -1,38 +1,263 @@
-.App {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Netflix Color Theme Variables */
+:root {
+  --netflix-red: #e50914;
+  --netflix-black: #141414;
+  --netflix-dark: #1a1a1a;
+  --netflix-gray: #2a2a2a;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--netflix-black);
+  color: white;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Tailwind Custom Classes */
+.bg-netflix-black {
+  background-color: var(--netflix-black);
 }
 
-.App-link {
-    color: #61dafb;
+.bg-netflix-dark {
+  background-color: var(--netflix-dark);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.bg-netflix-gray {
+  background-color: var(--netflix-gray);
+}
+
+.text-netflix-red {
+  color: var(--netflix-red);
+}
+
+.border-netflix-red {
+  border-color: var(--netflix-red);
+}
+
+.bg-netflix-red {
+  background-color: var(--netflix-red);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--netflix-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--netflix-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8070f;
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Glass Effect */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 26, 0.8);
+}
+
+/* Chart Containers */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Focus States */
+input:focus, textarea:focus, button:focus {
+  outline: 2px solid var(--netflix-red);
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.15s ease;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+}
+
+/* Card Shadows */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn-netflix {
+  background: linear-gradient(135deg, var(--netflix-red) 0%, #b8070f 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-netflix:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.3);
+}
+
+.btn-netflix:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Input Styles */
+.input-netflix {
+  background: var(--netflix-gray);
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.input-netflix:focus {
+  border-color: var(--netflix-red);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.1);
+}
+
+.input-netflix::placeholder {
+  color: #888;
+}
+
+/* Loading States */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Status Indicators */
+.status-success {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.status-warning {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.status-error {
+  color: var(--netflix-red);
+  background: rgba(229, 9, 20, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container-mobile {
+    padding: 16px;
+  }
+  
+  .text-responsive {
+    font-size: 14px;
+  }
+  
+  .card-mobile {
+    padding: 16px;
+  }
+}
+
+/* Dark Theme Enhancements */
+.bg-dark-gradient {
+  background: linear-gradient(135deg, var(--netflix-black) 0%, var(--netflix-dark) 100%);
+}
+
+.border-dark {
+  border-color: #333;
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
