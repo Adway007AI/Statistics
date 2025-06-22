@@ -122,15 +122,18 @@ backend:
 
   - task: "Statistical calculations API"
     implemented: true
-    working: "NA"
+    working: true
     file: "server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented comprehensive statistical calculations: basic stats (mean, median, mode, min/max, range, std dev, variance) and advanced stats (quartiles, IQR, skewness, kurtosis, percentiles, outlier detection)"
+      - working: true
+        agent: "testing"
+        comment: "Tested statistical calculations API with various inputs. All calculations (basic stats, advanced stats, percentiles, and outlier detection) are mathematically accurate. The API correctly calculates mean, median, mode, min/max, range, standard deviation, variance, quartiles, IQR, skewness, kurtosis, and percentiles. Outlier detection using the IQR method works as expected."
 
 frontend:
   - task: "Netflix-themed UI with manual input"
