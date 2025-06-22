@@ -101,3 +101,75 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Create a web app where I can put stock prices and it will give the output of all descriptive statistics. Theme: Netflix colour theme. Manual input with comma/space/newline separated Indian stock prices in ₹."
+
+backend:
+  - task: "Stock price input parsing and validation"
+    implemented: false
+    working: "NA"
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to implement input parsing for comma/space/newline separated formats"
+
+  - task: "Statistical calculations API"
+    implemented: false
+    working: "NA"
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need to implement all descriptive statistics: mean, median, mode, min/max, range, std dev, quartiles, IQR, skewness, kurtosis, percentiles"
+
+frontend:
+  - task: "Netflix-themed UI with manual input"
+    implemented: false
+    working: "NA"
+    file: "App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need Netflix dark theme with red accents, input field for stock prices, Clear All button"
+
+  - task: "Statistics display cards"
+    implemented: false
+    working: "NA"
+    file: "App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Need card-based display for all statistical results in Netflix theme"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 0
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Stock price input parsing and validation"
+    - "Statistical calculations API"
+    - "Netflix-themed UI with manual input"
+    - "Statistics display cards"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Starting development of stock statistics app with manual input. Building Netflix-themed UI with statistical calculations for Indian stock prices in ₹."
